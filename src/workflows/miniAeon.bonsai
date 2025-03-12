@@ -148,6 +148,64 @@
                       </Edges>
                     </Workflow>
                   </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>NestRfid1</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="HardwareNotificationsState" />
+                          <Property Name="PortName" />
+                          <Property Name="RfidEvents" />
+                          <Property Name="Location" />
+                          <Property Name="InboundRfidDetected" />
+                        </Expression>
+                        <Expression xsi:type="IncludeWorkflow" Path="Aeon.Environment:RfidReader.bonsai">
+                          <HardwareNotificationsState>None</HardwareNotificationsState>
+                          <PortName>COM4</PortName>
+                          <RfidEvents>NestRfid1Events</RfidEvents>
+                          <Location>
+                            <X>1155</X>
+                            <Y>664</Y>
+                          </Location>
+                          <InboundRfidDetected>NestRfid1InboundDetected</InboundRfidDetected>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>Patch1Rfid</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="HardwareNotificationsState" />
+                          <Property Name="PortName" />
+                          <Property Name="RfidEvents" />
+                          <Property Name="Location" />
+                          <Property Name="InboundRfidDetected" />
+                        </Expression>
+                        <Expression xsi:type="IncludeWorkflow" Path="Aeon.Environment:RfidReader.bonsai">
+                          <HardwareNotificationsState>None</HardwareNotificationsState>
+                          <PortName>COM5</PortName>
+                          <RfidEvents>Patch1RfidEvents</RfidEvents>
+                          <Location>
+                            <X>902</X>
+                            <Y>565</Y>
+                          </Location>
+                          <InboundRfidDetected>Patch1RfidInboundDetected</InboundRfidDetected>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
                 </Nodes>
                 <Edges />
               </Workflow>
@@ -352,6 +410,28 @@
                     <PartMinConfidence xsi:nil="true" />
                     <FrameStep>3</FrameStep>
                     <PoseTrackingEvents>PoseTrackingTop</PoseTrackingEvents>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>AudioAmbient</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="DeviceName" />
+                    <Property Name="SampleRate" />
+                    <Property Name="Name" />
+                  </Expression>
+                  <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:AudioSource.bonsai">
+                    <DeviceName>Microphone (UltraMic 192K 16 bi</DeviceName>
+                    <SampleRate>192000</SampleRate>
+                    <Name>AudioAmbient</Name>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
                 </Nodes>
