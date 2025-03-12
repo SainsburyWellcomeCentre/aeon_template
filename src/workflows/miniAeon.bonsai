@@ -152,6 +152,163 @@
                 <Edges />
               </Workflow>
             </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>TrackingTop</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="Name" DisplayName="FrameEvents" />
+                  </Expression>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>CameraTop</Name>
+                  </Expression>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="Mask" />
+                    <Property Name="ThresholdValue" />
+                    <Property Name="TrackingEvents" />
+                  </Expression>
+                  <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:PositionTracking.bonsai">
+                    <ThresholdValue>83</ThresholdValue>
+                    <Mask>Config\ArenaMask-AEON-template.png</Mask>
+                    <TrackingCount>1</TrackingCount>
+                    <TrackingEvents>TrackingTop</TrackingEvents>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="3" Label="Source1" />
+                  <Edge From="2" To="3" Label="Source2" />
+                  <Edge From="3" To="4" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>ActivityCenter</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>CameraTop</Name>
+                  </Expression>
+                  <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:ActivityTracking.bonsai">
+                    <Regions>
+                      <ArrayOfPoint>
+                        <Point>
+                          <X>76</X>
+                          <Y>431</Y>
+                        </Point>
+                        <Point>
+                          <X>404</X>
+                          <Y>431</Y>
+                        </Point>
+                        <Point>
+                          <X>404</X>
+                          <Y>665</Y>
+                        </Point>
+                        <Point>
+                          <X>76</X>
+                          <Y>665</Y>
+                        </Point>
+                      </ArrayOfPoint>
+                    </Regions>
+                    <ThresholdValue>10</ThresholdValue>
+                    <TrackingEvents>ActivityCenter</TrackingEvents>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>ActivityArena</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="SubscribeSubject">
+                    <Name>CameraTop</Name>
+                  </Expression>
+                  <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:ActivityTracking.bonsai">
+                    <Regions xsi:nil="true" />
+                    <ThresholdValue>10</ThresholdValue>
+                    <TrackingEvents>ActivityArena</TrackingEvents>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
+            <Expression xsi:type="GroupWorkflow">
+              <Name>ActiveRegion</Name>
+              <Workflow>
+                <Nodes>
+                  <Expression xsi:type="ExternalizedMapping">
+                    <Property Name="NestRegion" />
+                    <Property Name="Patch1Region" />
+                    <Property Name="ArenaCenter" />
+                    <Property Name="ArenaInnerRadius" />
+                    <Property Name="ArenaOuterRadius" />
+                  </Expression>
+                  <Expression xsi:type="IncludeWorkflow" Path="Extensions\ActiveRegion.bonsai">
+                    <NestRegion>
+                      <ArrayOfPoint>
+                        <Point>
+                          <X>1273</X>
+                          <Y>518</Y>
+                        </Point>
+                        <Point>
+                          <X>1183</X>
+                          <Y>517</Y>
+                        </Point>
+                        <Point>
+                          <X>1183</X>
+                          <Y>623</Y>
+                        </Point>
+                        <Point>
+                          <X>1275</X>
+                          <Y>615</Y>
+                        </Point>
+                      </ArrayOfPoint>
+                    </NestRegion>
+                    <Patch1Region>
+                      <ArrayOfPoint>
+                        <Point>
+                          <X>861</X>
+                          <Y>558</Y>
+                        </Point>
+                        <Point>
+                          <X>884</X>
+                          <Y>556</Y>
+                        </Point>
+                        <Point>
+                          <X>883</X>
+                          <Y>577</Y>
+                        </Point>
+                        <Point>
+                          <X>861</X>
+                          <Y>577</Y>
+                        </Point>
+                      </ArrayOfPoint>
+                    </Patch1Region>
+                    <ArenaCenter>
+                      <X>680</X>
+                      <Y>565</Y>
+                    </ArenaCenter>
+                    <ArenaInnerRadius>487</ArenaInnerRadius>
+                    <ArenaOuterRadius>515</ArenaOuterRadius>
+                  </Expression>
+                  <Expression xsi:type="WorkflowOutput" />
+                </Nodes>
+                <Edges>
+                  <Edge From="0" To="1" Label="Source1" />
+                  <Edge From="1" To="2" Label="Source1" />
+                </Edges>
+              </Workflow>
+            </Expression>
           </Nodes>
           <Edges />
         </Workflow>
