@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <WorkflowBuilder Version="2.8.2"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:rx="clr-namespace:Bonsai.Reactive;assembly=Bonsai.Core"
@@ -522,35 +522,7 @@
           <Edges />
         </Workflow>
       </Expression>
-      <Expression xsi:type="GroupWorkflow">
-        <Name>Declarations</Name>
-        <Workflow>
-          <Nodes>
-            <Expression xsi:type="rx:BehaviorSubject" TypeArguments="aeon-env:WeightMeasurement">
-              <rx:Name>SubjectWeight</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:PublishSubject" TypeArguments="harp:Timestamped(sys:Byte)">
-              <rx:Name>Patch1MissedPellets</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:PublishSubject" TypeArguments="harp:Timestamped(sys:Int32)">
-              <rx:Name>BaselineTrigger</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject" TypeArguments="harp:Timestamped(aeon-env:EnvironmentStateMetadata)">
-              <rx:Name>EnvironmentState</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:BehaviorSubject" TypeArguments="harp:Timestamped(aeon-env:EnvironmentSubjectStateMetadata)">
-              <rx:Name>SubjectState</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:PublishSubject" TypeArguments="harp:Timestamped(aeon-env:EnvironmentSubjectStateMetadata)">
-              <rx:Name>SubjectStart</rx:Name>
-            </Expression>
-            <Expression xsi:type="rx:PublishSubject" TypeArguments="harp:Timestamped(aeon-env:EnvironmentSubjectStateMetadata)">
-              <rx:Name>SubjectStop</rx:Name>
-            </Expression>
-          </Nodes>
-          <Edges />
-        </Workflow>
-      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Extensions\Declarations.bonsai" />
       <Expression xsi:type="GroupWorkflow">
         <Name>Visualization</Name>
         <Workflow>
