@@ -206,6 +206,28 @@
                       </Edges>
                     </Workflow>
                   </Expression>
+                  <Expression xsi:type="GroupWorkflow">
+                    <Name>AudioAmbient</Name>
+                    <Workflow>
+                      <Nodes>
+                        <Expression xsi:type="ExternalizedMapping">
+                          <Property Name="DeviceName" />
+                          <Property Name="SampleRate" />
+                          <Property Name="Name" />
+                        </Expression>
+                        <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:AudioSource.bonsai">
+                          <DeviceName>Microphone (UltraMic 192K 16 bi</DeviceName>
+                          <SampleRate>192000</SampleRate>
+                          <Name>AudioAmbient</Name>
+                        </Expression>
+                        <Expression xsi:type="WorkflowOutput" />
+                      </Nodes>
+                      <Edges>
+                        <Edge From="0" To="1" Label="Source1" />
+                        <Edge From="1" To="2" Label="Source1" />
+                      </Edges>
+                    </Workflow>
+                  </Expression>
                 </Nodes>
                 <Edges />
               </Workflow>
@@ -450,28 +472,6 @@
                     <PartMinConfidence xsi:nil="true" />
                     <FrameStep>3</FrameStep>
                     <PoseTrackingEvents>PoseTrackingTop</PoseTrackingEvents>
-                  </Expression>
-                  <Expression xsi:type="WorkflowOutput" />
-                </Nodes>
-                <Edges>
-                  <Edge From="0" To="1" Label="Source1" />
-                  <Edge From="1" To="2" Label="Source1" />
-                </Edges>
-              </Workflow>
-            </Expression>
-            <Expression xsi:type="GroupWorkflow">
-              <Name>AudioAmbient</Name>
-              <Workflow>
-                <Nodes>
-                  <Expression xsi:type="ExternalizedMapping">
-                    <Property Name="DeviceName" />
-                    <Property Name="SampleRate" />
-                    <Property Name="Name" />
-                  </Expression>
-                  <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:AudioSource.bonsai">
-                    <DeviceName>Microphone (UltraMic 192K 16 bi</DeviceName>
-                    <SampleRate>192000</SampleRate>
-                    <Name>AudioAmbient</Name>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
                 </Nodes>
