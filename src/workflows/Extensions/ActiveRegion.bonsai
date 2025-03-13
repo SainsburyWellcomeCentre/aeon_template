@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<WorkflowBuilder Version="2.8.2"
+<WorkflowBuilder Version="2.8.1"
                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                  xmlns:aeon="clr-namespace:Aeon.Acquisition;assembly=Aeon.Acquisition"
                  xmlns="https://bonsai-rx.org/2018/workflow">
@@ -16,20 +16,36 @@
         <Regions>
           <ArrayOfPoint>
             <Point>
-              <X>1273</X>
+              <X>159</X>
+              <Y>471</Y>
+            </Point>
+            <Point>
+              <X>213</X>
+              <Y>480</Y>
+            </Point>
+            <Point>
+              <X>212</X>
+              <Y>515</Y>
+            </Point>
+            <Point>
+              <X>240</X>
               <Y>518</Y>
             </Point>
             <Point>
-              <X>1183</X>
-              <Y>517</Y>
+              <X>238</X>
+              <Y>540</Y>
             </Point>
             <Point>
-              <X>1183</X>
-              <Y>623</Y>
+              <X>212</X>
+              <Y>538</Y>
             </Point>
             <Point>
-              <X>1275</X>
-              <Y>615</Y>
+              <X>209</X>
+              <Y>574</Y>
+            </Point>
+            <Point>
+              <X>153</X>
+              <Y>569</Y>
             </Point>
           </ArrayOfPoint>
         </Regions>
@@ -43,24 +59,78 @@
         <Regions>
           <ArrayOfPoint>
             <Point>
-              <X>861</X>
-              <Y>558</Y>
+              <X>550</X>
+              <Y>819</Y>
             </Point>
             <Point>
-              <X>884</X>
-              <Y>556</Y>
+              <X>567</X>
+              <Y>830</Y>
             </Point>
             <Point>
-              <X>883</X>
-              <Y>577</Y>
+              <X>558</X>
+              <Y>847</Y>
             </Point>
             <Point>
-              <X>861</X>
-              <Y>577</Y>
+              <X>541</X>
+              <Y>832</Y>
             </Point>
           </ArrayOfPoint>
         </Regions>
-        <RegionEvents>InPatch</RegionEvents>
+        <RegionEvents>InPatch1</RegionEvents>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Regions" DisplayName="Patch2Region" />
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:RegionTracking.bonsai">
+        <FrameEvents>CameraTop</FrameEvents>
+        <Regions>
+          <ArrayOfPoint>
+            <Point>
+              <X>579</X>
+              <Y>253</Y>
+            </Point>
+            <Point>
+              <X>596</X>
+              <Y>243</Y>
+            </Point>
+            <Point>
+              <X>601</X>
+              <Y>261</Y>
+            </Point>
+            <Point>
+              <X>585</X>
+              <Y>270</Y>
+            </Point>
+          </ArrayOfPoint>
+        </Regions>
+        <RegionEvents>InPatch2</RegionEvents>
+      </Expression>
+      <Expression xsi:type="ExternalizedMapping">
+        <Property Name="Regions" DisplayName="Patch3Region" />
+      </Expression>
+      <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:RegionTracking.bonsai">
+        <FrameEvents>CameraTop</FrameEvents>
+        <Regions>
+          <ArrayOfPoint>
+            <Point>
+              <X>579</X>
+              <Y>253</Y>
+            </Point>
+            <Point>
+              <X>596</X>
+              <Y>243</Y>
+            </Point>
+            <Point>
+              <X>601</X>
+              <Y>261</Y>
+            </Point>
+            <Point>
+              <X>585</X>
+              <Y>270</Y>
+            </Point>
+          </ArrayOfPoint>
+        </Regions>
+        <RegionEvents>InPatch3</RegionEvents>
       </Expression>
       <Expression xsi:type="SubscribeSubject">
         <Name>TrackingTop</Name>
@@ -71,8 +141,8 @@
       <Expression xsi:type="Combinator">
         <Combinator xsi:type="aeon:DistanceFromPoint">
           <aeon:Value>
-            <aeon:X>680</aeon:X>
-            <aeon:Y>565</aeon:Y>
+            <aeon:X>0</aeon:X>
+            <aeon:Y>0</aeon:Y>
           </aeon:Value>
         </Combinator>
       </Expression>
@@ -91,7 +161,7 @@
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:InRange.bonsai">
               <Lower xsi:nil="true" />
-              <Upper>487</Upper>
+              <Upper>480</Upper>
               <RangeEvents>InArena</RangeEvents>
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
@@ -118,8 +188,8 @@
               <Property Name="Upper" DisplayName="OuterRadius" />
             </Expression>
             <Expression xsi:type="IncludeWorkflow" Path="Aeon.Acquisition:InRange.bonsai">
-              <Lower>487</Lower>
-              <Upper>515</Upper>
+              <Lower>480</Lower>
+              <Upper>502</Upper>
               <RangeEvents>InCorridor</RangeEvents>
             </Expression>
             <Expression xsi:type="WorkflowOutput" />
@@ -135,15 +205,19 @@
     <Edges>
       <Edge From="0" To="2" Label="Source1" />
       <Edge From="0" To="4" Label="Source1" />
+      <Edge From="0" To="6" Label="Source1" />
+      <Edge From="0" To="8" Label="Source1" />
       <Edge From="1" To="2" Label="Source2" />
       <Edge From="3" To="4" Label="Source2" />
-      <Edge From="5" To="7" Label="Source1" />
-      <Edge From="6" To="7" Label="Source2" />
-      <Edge From="7" To="9" Label="Source1" />
-      <Edge From="7" To="11" Label="Source1" />
-      <Edge From="8" To="9" Label="Source2" />
-      <Edge From="8" To="11" Label="Source2" />
-      <Edge From="10" To="11" Label="Source3" />
+      <Edge From="5" To="6" Label="Source2" />
+      <Edge From="7" To="8" Label="Source2" />
+      <Edge From="9" To="11" Label="Source1" />
+      <Edge From="10" To="11" Label="Source2" />
+      <Edge From="11" To="13" Label="Source1" />
+      <Edge From="11" To="15" Label="Source1" />
+      <Edge From="12" To="13" Label="Source2" />
+      <Edge From="12" To="15" Label="Source2" />
+      <Edge From="14" To="15" Label="Source3" />
     </Edges>
   </Workflow>
 </WorkflowBuilder>

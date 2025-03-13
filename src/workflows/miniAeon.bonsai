@@ -335,29 +335,69 @@
                     <Patch1Region>
                       <ArrayOfPoint>
                         <Point>
-                          <X>861</X>
-                          <Y>558</Y>
+                          <X>550</X>
+                          <Y>819</Y>
                         </Point>
                         <Point>
-                          <X>884</X>
-                          <Y>556</Y>
+                          <X>567</X>
+                          <Y>830</Y>
                         </Point>
                         <Point>
-                          <X>883</X>
-                          <Y>577</Y>
+                          <X>558</X>
+                          <Y>847</Y>
                         </Point>
                         <Point>
-                          <X>861</X>
-                          <Y>577</Y>
+                          <X>541</X>
+                          <Y>832</Y>
                         </Point>
                       </ArrayOfPoint>
                     </Patch1Region>
+                    <Patch2Region>
+                      <ArrayOfPoint>
+                        <Point>
+                          <X>550</X>
+                          <Y>819</Y>
+                        </Point>
+                        <Point>
+                          <X>567</X>
+                          <Y>830</Y>
+                        </Point>
+                        <Point>
+                          <X>558</X>
+                          <Y>847</Y>
+                        </Point>
+                        <Point>
+                          <X>541</X>
+                          <Y>832</Y>
+                        </Point>
+                      </ArrayOfPoint>
+                    </Patch2Region>
+                    <Patch3Region>
+                      <ArrayOfPoint>
+                        <Point>
+                          <X>550</X>
+                          <Y>819</Y>
+                        </Point>
+                        <Point>
+                          <X>567</X>
+                          <Y>830</Y>
+                        </Point>
+                        <Point>
+                          <X>558</X>
+                          <Y>847</Y>
+                        </Point>
+                        <Point>
+                          <X>541</X>
+                          <Y>832</Y>
+                        </Point>
+                      </ArrayOfPoint>
+                    </Patch3Region>
                     <ArenaCenter>
                       <X>680</X>
                       <Y>565</Y>
                     </ArenaCenter>
-                    <ArenaInnerRadius>487</ArenaInnerRadius>
-                    <ArenaOuterRadius>515</ArenaOuterRadius>
+                    <ArenaInnerRadius>480</ArenaInnerRadius>
+                    <ArenaOuterRadius>502</ArenaOuterRadius>
                   </Expression>
                   <Expression xsi:type="WorkflowOutput" />
                 </Nodes>
