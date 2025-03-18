@@ -64,7 +64,7 @@ All these devices are connected to the computer and configured, by default, at t
 | COM3     | Patch1            |
 | COM4     | Nest              |
 | COM5     | NestRfid1         |
-| COM5     | Patch1Rfid        |
+| COM6     | Patch1Rfid        |
 
 ### Environment Setup
 
