@@ -2,8 +2,7 @@
 
 The Project Aeon template repository contains a workflow demonstrating the fundamental building blocks of an experimental acquisition system using Aeon components. These components are part of the [Project Aeon Platform](https://github.com/SainsburyWellcomeCentre/aeon_experiments), a collection of [Bonsai](https://bonsai-rx.org/) and Python packages designed to support standardized, large-scale, and reproducible experiments. This template provides a full acquisition pipeline, including the specification of a Domain-Specific Language for the task, establishing communication and control over Project Aeon and [Harp](https://github.com/harp-tech) hardware, acquisition and logging of data, and experimental metadata.
 
-Experimental workflows to execute full Project Aeon experiments can be found at the `aeon_experiments` [repository](https://github.com/SainsburyWellcomeCentre/aeon_experiments), and detailed documentation and guidance on Project AEON Habitat construction, data handling and control can be found [here](<!-- TODO fix link to docs website-->
-)
+Experimental workflows to execute full Project Aeon experiments can be found at the `aeon_experiments` [repository](https://github.com/SainsburyWellcomeCentre/aeon_experiments), and detailed documentation and guidance on Project AEON Habitat construction, data handling and control can be found [here](https://sainsburywellcomecentre.github.io/aeon_docs/).
 
 ## Deployment Instructions
 
@@ -23,6 +22,10 @@ These should only need to be installed once on a fresh system. They are not requ
   - On the FLIR website: `Download > archive > 1.29.0.5 > SpinnakerSDK_FULL_1.29.0.5_x64.exe`
 - [CUDA 11.3](https://developer.nvidia.com/cuda-11.3.0-download-archive) (for SLEAP multi-animal tracking)
   - Select **Custom install** and check `CUDA > Development` and `CUDA > Runtime` ONLY (uncheck everything else)
+
+### Inventory
+
+A local inventory can be accessed by aeon members [here](https://docs.google.com/spreadsheets/d/1T7EVcioJGYADa492KawHQlV7ZcGx9It75jTjiwnZV0w/edit?gid=0#gid=0)
 
 ### Hardware Setup
 
@@ -72,6 +75,9 @@ The `.bonsai` folder contains a snapshot of the runtime environment required to 
 
 If the environment configuration becomes corrupted, you can revert and reinstall the `.bonsai` environment by re-running the `deploy.cmd` script.
 
+### Useful links
+
+- 
 ### Incoming Webhooks
 
 **WIP**
