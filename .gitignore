@@ -1,1 +1,3 @@
 .bonsai/Packages
+.bonsai/Bonsai.exe.WebView2*
+src/workflows/obj/*
