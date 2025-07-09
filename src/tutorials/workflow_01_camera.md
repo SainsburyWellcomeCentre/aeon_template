@@ -30,13 +30,13 @@ Many of these workflows are constructed with the use of reuseable `IncludeWorkfl
 
 ### Group: `Devices`
 
-**Purpose**: The Devices group configures and initialises connections with the experimental hardware. Here a  clock, the camera controller, and a camera. It's the interface between software and the real-world action in your arena.
+**Purpose**: The Devices group configures and initialises connections with the experimental hardware. To start with here, we instantiate the several [Harp](https://harp-tech.org/) devices: [Timestamp Generator](https://github.com/harp-tech/device.timestampgeneratorgen3), a [Camera Controller](https://github.com/harp-tech/device.cameracontroller), and a camera.
 
 ![1-camera-devices](../../docs/workflowImages/1.2-camera-devices.svg)
 
-#### `TimestampGenerator`
+#### SubGroup:`TimestampGenerator`
 
-Configures and controls a Harp [TimestampGenerator](https://github.com/harp-tech/device.timestampgeneratorgen3). This device provides a common clock signal to sycnhronise the data streams and other hardware. 
+Configures a Harp [TimestampGenerator](https://github.com/harp-tech/device.timestampgeneratorgen3) which provides a common clock signal to sycnhronize the data streams and other hardware. 
 
 #> **Note**
 > This function can also be achieved with a [Clock Synchronizer](https://github.com/harp-tech/device.clocksynchronizer) device, for which a dedicated `IncludeWorkflow` `Aeon.Acquisition:ClockSynchronizer.bonsai` is also available and can be exchanged for the `TimestampGenerator` group. 
@@ -49,7 +49,7 @@ Configures and controls a Harp [TimestampGenerator](https://github.com/harp-tech
 
 #### `VideoController`
 
-Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/device.cameracontroller) device. This device uses two PWM outputs as sources to trigger frame captures at one of two frequencies set in the properties of this group.
+Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/device.cameracontroller) device. This device uses two PWM outputs as sources to trigger frame captures at frequencies set in the properties of this group.
 
 - **Included Workflow**: `Aeon.Acquisition:CameraController.bonsai`
 
@@ -77,7 +77,7 @@ Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/
 ---
 
 ### Group: `Control Panel`
- This group provides an interactive user interface for the workflow and connected components. Here keyboard inputs are used to trigger recording by initiating or pausing camera triggers, and provides a convenient visualiser to view the stream live. In experiments with multiple cameras these will appear in the dropdown of the generated visualizer.
+ This group provides an interactive user interface for the workflow and connected components. Here keyboard inputs are used to trigger recording by initiating or pausing camera triggers, and provides a convenient visualizer to view the camera stream live. In experiments with multiple cameras these will appear in the dropdown of the generated visualizer.
 
 ![1-camera-control-panel](../../docs/workflowImages/1.4-control-panel.svg)
 #### Key Bindings
