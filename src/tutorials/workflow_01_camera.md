@@ -47,6 +47,15 @@ Configures a Harp [TimestampGenerator](https://github.com/harp-tech/device.times
 |-------------|-------------|
 | PortName    | COM port    |
 
+To set the correct COM port, open the "Device Manager" and navigate to the COM Port section. Unplug the USB cable of the TimestampGenerator and observe, which COM port disappears. Plug the device in again and confirm that this device appears again.
+
+In this example, the device was connected as COM5:
+
+![DeviceManager](../../docs/screenshots/2.1_ComPorts.PNG)
+
+![SetTimestampCom](../../docs/screenshots/2.2_setTimestampCom.PNG)
+
+
 #### `VideoController`
 
 Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/device.cameracontroller) device. This device uses two PWM outputs as sources to trigger frame captures at frequencies set in the properties of this group.
@@ -58,6 +67,9 @@ Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/
 | PortName               | COM port                    |
 | GlobalTriggerFrequency | Frequency of global trigger |
 | LocalTriggerFrequency  | Frequency of local trigger  |
+
+Use the same procedure as described for the TimestampGenerator to set the correct COM port.
+
 
 #### `CameraTop`
 - **Included Workflow**: `Aeon.Acquisition:SpinnakerVideoSource.bonsai`
@@ -76,6 +88,16 @@ Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/
 
 ---
 
+
+To use the connected camera, the SerialNumber property of the camera needs to be set.
+Open SpinView 1.29.0.5, and copy the shown serial number (here 23106236) into the property field of the camera.
+
+![SpinviewScreenshot](../../docs/screenshots/1.1-spinviewCamera.PNG)
+
+![SetCameraProperty](../../docs/screenshots/1.2-setCameraSerial.PNG)
+
+
+
 ### Group: `Control Panel`
  This group provides an interactive user interface for the workflow and connected components. Here keyboard inputs are used to trigger recording by initiating or pausing camera triggers, and provides a convenient visualizer to view the camera stream live. In experiments with multiple cameras these will appear in the dropdown of the generated visualizer.
 
@@ -83,7 +105,7 @@ Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/
 #### Key Bindings
 
 - `StartCameras`: Triggered by keys: `Shift + F1`
-- `StopCameras`: Triggered by keys: `Shift + F3`
+- `StopCameras`: Triggered by keys: `Shift + F2`
 
 #### Subgroup: `CameraSelector`
 
@@ -95,6 +117,15 @@ Configures and controls a Harp [Camera Controller](https://github.com/harp-tech/
 | SelectedStream   | The name of the camera stream displayed by default   |
 
 ---
+
+## Run the workflow
+
+After setting the connection parameters for the three devices, click the Start button in Bonsai to run the workflow.
+To see the camera frames, inspect for example the WorkflowOutput in the CameraSelector.
+
+![ExampleFrame](../../docs/screenshots/3.1_exampleFrame.PNG)
+
+
 
 ## Next Steps
 
