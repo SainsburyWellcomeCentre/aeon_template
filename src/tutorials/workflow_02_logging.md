@@ -57,6 +57,11 @@ This workflow generates a formatted path from the repository and passes it to a 
 | FallbackPath    | Backup path if main path fails                             |
 | ChunkSize       | Length of time, in hours, to chunk data                    |
 
+Enter the paths to save the data into the RepositoryLogController, for example to store data in the folder C:/ProjectAeon/data/workflow_2.
+
+![ExampleDataPaths](../../docs/screenshots/4.1_RepositoryLogController.PNG)
+
+
 #### Subgroup: `ExportMetadata`
 - **Included Workflow**: `Aeon.Acquisition:ExportMetadata.bonsai`
 
@@ -90,6 +95,11 @@ Output file: `Metadata.yml`, saved to the current session’s data folder, contr
 | ClosingDuration  | Allowance for file closure                                |
 
 ---
+
+### Run the workflow
+
+Before running the workflow, set the correct connection parameters for the three connected devices again. Follow the instructions in [Tutorial #01](../tutorials/workflow_01_camera.md) to set the COM ports for the TimestampGenerator and VideoController, as well as the SerialNumber of the camera.
+
 
 ## Next Steps
 
